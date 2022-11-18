@@ -1,6 +1,5 @@
 const path = require('path');
 const webpack = require('webpack');
-const NodePolyfillPlugin = require("node-polyfill-webpack-plugin");
 const { node } = require('webpack');
 
 module.exports = {
@@ -41,8 +40,6 @@ module.exports = {
     }
   },
 
-  target:node,
-
   output: {
     path: path.resolve(__dirname, 'dist/'),
     publicPath: '/dist/',
@@ -60,5 +57,5 @@ module.exports = {
     hot: "only",
   },
 
-  plugins: [new webpack.HotModuleReplacementPlugin(), new NodePolyfillPlugin()]
+  plugins: [new webpack.HotModuleReplacementPlugin()]
 };
